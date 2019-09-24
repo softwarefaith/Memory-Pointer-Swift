@@ -2,6 +2,9 @@ import UIKit
 
 var str = "Hello, playground"
 
+
+let a = MemoryLayout<UnsafeBufferPointer<Int>>.stride
+
 let count = 4
 let stride = MemoryLayout<Int>.stride
 let alignment = MemoryLayout<Int>.alignment
@@ -11,7 +14,7 @@ let bytecount = stride * count
 do {
     //开辟了 16个字节的内存空间
     let pointer = UnsafeMutableRawPointer.allocate(byteCount: bytecount, alignment: alignment)
-    
+
     defer {
         pointer.deallocate()
     }
@@ -21,9 +24,13 @@ do {
     //偏移8个字节,储存 6
     pointer.advanced(by: stride).storeBytes(of: 6, as: Int.self)//后8个字节存
     //偏移两次，存储 10
-    pointer.advanced(by: stride).advanced(by: stride).storeBytes(of: 10, as: Int.self)
+    (pointer + 2).storeBytes(of: 10, as: Int.self)
+    //pointer.advanced(by: stride).advanced(by: stride).storeBytes(of: 10, as: Int.self)
     //与上一句等价
-    pointer.storeBytes(of: 8, toByteOffset: stride*3, as: Int.self)
+   // pointer.storeBytes(of: 8, toByteOffset: stride*3, as: Int.self)
+    
+//    let a = pointer.move()
+//    print(a)
     
     //内存空间读
     pointer.load(as: Int.self)
@@ -38,6 +45,23 @@ do {
        // print("byte\(index):\(byte)")
     }
     
+    
+}
+
+do {
+    
+    
+    let count = 2
+    let ptr = UnsafeMutablePointer<Int>.allocate(capacity: count)
+    let buffer = UnsafeMutableBufferPointer(start: ptr, count: count)
+    for (i, _) in buffer.enumerated(){
+        buffer[i] = Int(arc4random())
+    }
+
+    print(buffer)
+    // Do stuff...
+
+    ptr.deallocate()   // Don't forget to dealloc!
     
 }
 
@@ -81,9 +105,6 @@ do{
     typedPointer.initialize(repeating: 0, count: count)
     typedPointer.pointee = 42
     typedPointer.deinitialize(count: count)
-    
-    
-    
 }
 
 //MARK:
@@ -102,6 +123,8 @@ do {
     rawPointer.advanced(by: 8).load(as: Int.self)
     
     print(rawPointer.assumingMemoryBound(to: Int.self).pointee)
+    
+    print(unsafeBitCast(rawPointer, to: UnsafePointer<Int>.self).pointee)
 }
 
 //MARK: Getting The Bytes of an Instance
@@ -116,8 +139,6 @@ do {
     withUnsafeBytes(of: &sample) { (bytes)->Void in
         
     }
-    
-    
 }
 
 //Three Rules of Unsafe Club

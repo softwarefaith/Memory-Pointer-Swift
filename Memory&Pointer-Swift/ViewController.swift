@@ -12,19 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        var age = 10
-        
-        UnsafeMutableBufferPointer
-        
-        withUnsafeBytes(of: &age) { (ageBytes) in
-        
-            print(ageBytes.count)
-            print(ageBytes.first ?? 9999)
-            print( ageBytes[0])
-        }
-        
+        // Do any additional setup after 
 
     }
     
