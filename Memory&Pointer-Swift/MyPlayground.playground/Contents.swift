@@ -1,5 +1,7 @@
 import UIKit
 
+ let fmt = "0x%0\(4 << 1)lx"
+
 var str = "Hello, playground"
 
 

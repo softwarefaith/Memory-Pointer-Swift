@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let fmt = "0x%0\(4 << 1)lx"
+        
+          let fmt2 = "0x%0\(8 << 1)lx"
+        
+        print(fmt)
+      
+         print(fmt2)
+          var string = ""
+          string.append(String(format: fmt, "122313123"))
+         print(string)
         return true
     }
 

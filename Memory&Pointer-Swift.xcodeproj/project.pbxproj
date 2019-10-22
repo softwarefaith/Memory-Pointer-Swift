@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E074C36235F067000DE18BF /* SwiftMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E074C35235F067000DE18BF /* SwiftMemory.swift */; };
 		2EFCC5BA23176CCB00F80414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCC5B923176CCB00F80414 /* AppDelegate.swift */; };
 		2EFCC5BC23176CCB00F80414 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCC5BB23176CCB00F80414 /* ViewController.swift */; };
 		2EFCC5BF23176CCB00F80414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EFCC5BD23176CCB00F80414 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E074C35235F067000DE18BF /* SwiftMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMemory.swift; sourceTree = "<group>"; };
 		2EFCC5B623176CCB00F80414 /* Memory&Pointer-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory&Pointer-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFCC5B923176CCB00F80414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EFCC5BB23176CCB00F80414 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,9 +38,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E074C34235F065100DE18BF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2E074C35235F067000DE18BF /* SwiftMemory.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		2EFCC5AD23176CCA00F80414 = {
 			isa = PBXGroup;
 			children = (
+				2E074C34235F065100DE18BF /* Source */,
 				2EFCC5B823176CCB00F80414 /* Memory&Pointer-Swift */,
 				2EFCC5B723176CCB00F80414 /* Products */,
 			);
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EFCC5BC23176CCB00F80414 /* ViewController.swift in Sources */,
+				2E074C36235F067000DE18BF /* SwiftMemory.swift in Sources */,
 				2EFCC5BA23176CCB00F80414 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
