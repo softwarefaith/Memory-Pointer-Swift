@@ -31,7 +31,7 @@ public struct SwiftMemory<T>{
         
         if ptr == EMPTY_POINTER  { return ""}
         
-        let rawPtr = ptr
+        var rawPtr = ptr
         var string:String = ""
         
         //格式化模板
@@ -40,6 +40,7 @@ public struct SwiftMemory<T>{
         for i in 0 ..< count {
             if i > 0 {
                 string.append(" ")
+                rawPtr += aligment
             }
             let value: CVarArg
             switch aligment {
@@ -143,6 +144,8 @@ public struct MemoryWrapper<Base> {
     public private(set) var base: Base
     public init(_ base: Base) {
         self.base = base
+        
+        
     }
 }
 
@@ -178,16 +181,16 @@ public extension MemoryWrapper where Base == String {
 
 extension SwiftMemory {
     
-    func show<T>(val: inout T) {
+   static func show<T>(val: inout T) {
         print("-------------- \(type(of: val)) --------------")
         print("变量的地址:", SwiftMemory<T>.pointer(ofValue: &val))
         print("变量的内存:", SwiftMemory<T>.memoryStr(ofValue: &val)  )
         print("变量的大小:", SwiftMemory<T>.size(ofValue: &val))
-        print("变量的内存数据:", SwiftMemory<T>.memoryBytes(ofValue: &val))
+      //  print("变量的内存数据:", SwiftMemory<T>.memoryBytes(ofValue: &val))
         print("")
     }
 
-   func show<T>(ref:T) {
+   static func show<T>(ref:T) {
        print("-------------- \(type(of: ref)) --------------")
     
        var ss:String? = ref as?String
@@ -199,7 +202,7 @@ extension SwiftMemory {
        print("变量的地址:", SwiftMemory<T>.pointer(ofRefValue:ref))
        print("变量的内存:", SwiftMemory<T>.memoryStr(ofRefValue: ref)  )
        print("变量的大小:", SwiftMemory<T>.size(ofRefValue: ref))
-       print("变量的内存数据:", SwiftMemory<T>.memoryBytes(ofRefValue: ref))
+      // print("变量的内存数据:", SwiftMemory<T>.memoryBytes(ofRefValue: ref))
        print("")
    }
     

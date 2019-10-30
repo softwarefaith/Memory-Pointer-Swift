@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2E074C36235F067000DE18BF /* SwiftMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E074C35235F067000DE18BF /* SwiftMemory.swift */; };
+		2EC9C97F2368397B001B863E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC9C97E2368397B001B863E /* main.swift */; };
+		2EC9C98323683986001B863E /* SwiftMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E074C35235F067000DE18BF /* SwiftMemory.swift */; };
+		2EC9C98723683A7F001B863E /* memorydumper2 in Resources */ = {isa = PBXBuildFile; fileRef = 2EC9C98623683A7E001B863E /* memorydumper2 */; };
 		2EFCC5BA23176CCB00F80414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCC5B923176CCB00F80414 /* AppDelegate.swift */; };
 		2EFCC5BC23176CCB00F80414 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCC5BB23176CCB00F80414 /* ViewController.swift */; };
 		2EFCC5BF23176CCB00F80414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EFCC5BD23176CCB00F80414 /* Main.storyboard */; };
@@ -15,8 +18,23 @@
 		2EFCC5C423176CCB00F80414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EFCC5C223176CCB00F80414 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2EC9C97A2368397B001B863E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2E074C35235F067000DE18BF /* SwiftMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMemory.swift; sourceTree = "<group>"; };
+		2EC9C97C2368397B001B863E /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EC9C97E2368397B001B863E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2EC9C98623683A7E001B863E /* memorydumper2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = memorydumper2; path = "memorydumper2-master/memorydumper2"; sourceTree = "<group>"; };
 		2EFCC5B623176CCB00F80414 /* Memory&Pointer-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memory&Pointer-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFCC5B923176CCB00F80414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EFCC5BB23176CCB00F80414 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +46,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2EC9C9792368397B001B863E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EFCC5B323176CCB00F80414 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,11 +71,21 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		2EC9C97D2368397B001B863E /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2EC9C97E2368397B001B863E /* main.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		2EFCC5AD23176CCA00F80414 = {
 			isa = PBXGroup;
 			children = (
+				2EC9C98623683A7E001B863E /* memorydumper2 */,
 				2E074C34235F065100DE18BF /* Source */,
 				2EFCC5B823176CCB00F80414 /* Memory&Pointer-Swift */,
+				2EC9C97D2368397B001B863E /* Test */,
 				2EFCC5B723176CCB00F80414 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				2EFCC5B623176CCB00F80414 /* Memory&Pointer-Swift.app */,
+				2EC9C97C2368397B001B863E /* Test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +116,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2EC9C97B2368397B001B863E /* Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EC9C9822368397B001B863E /* Build configuration list for PBXNativeTarget "Test" */;
+			buildPhases = (
+				2EC9C9782368397B001B863E /* Sources */,
+				2EC9C9792368397B001B863E /* Frameworks */,
+				2EC9C97A2368397B001B863E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Test;
+			productName = Test;
+			productReference = 2EC9C97C2368397B001B863E /* Test */;
+			productType = "com.apple.product-type.tool";
+		};
 		2EFCC5B523176CCB00F80414 /* Memory&Pointer-Swift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EFCC5C823176CCB00F80414 /* Build configuration list for PBXNativeTarget "Memory&Pointer-Swift" */;
@@ -103,10 +156,13 @@
 		2EFCC5AE23176CCA00F80414 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "蔡杰";
 				TargetAttributes = {
+					2EC9C97B2368397B001B863E = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					2EFCC5B523176CCB00F80414 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -126,6 +182,7 @@
 			projectRoot = "";
 			targets = (
 				2EFCC5B523176CCB00F80414 /* Memory&Pointer-Swift */,
+				2EC9C97B2368397B001B863E /* Test */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EFCC5C423176CCB00F80414 /* LaunchScreen.storyboard in Resources */,
+				2EC9C98723683A7F001B863E /* memorydumper2 in Resources */,
 				2EFCC5C123176CCB00F80414 /* Assets.xcassets in Resources */,
 				2EFCC5BF23176CCB00F80414 /* Main.storyboard in Resources */,
 			);
@@ -144,6 +202,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2EC9C9782368397B001B863E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EC9C98323683986001B863E /* SwiftMemory.swift in Sources */,
+				2EC9C97F2368397B001B863E /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EFCC5B223176CCB00F80414 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,6 +243,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2EC9C9802368397B001B863E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2EC9C9812368397B001B863E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		2EFCC5C623176CCB00F80414 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +418,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2EC9C9822368397B001B863E /* Build configuration list for PBXNativeTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EC9C9802368397B001B863E /* Debug */,
+				2EC9C9812368397B001B863E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EFCC5B123176CCA00F80414 /* Build configuration list for PBXProject "Memory&Pointer-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
